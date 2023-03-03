@@ -1,8 +1,63 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* HEADER */
+.navbar {
+  padding: 2rem;
+  background-color: #f5f6f7;
+  padding: 22px;
 }
 
-a {
-  color: #00B7FF;
+.navbar-collapse{
+  align-items: center;
+  justify-content: space-between;
 }
+
+@media screen and (max-width: 767px) {
+  .navbar-brand{
+    display: none;
+  }
+  .navbar-toggler {
+    margin: auto;
+  }
+}
+
+/* Profile */
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1{
+  font-size: 2.5rem;
+
+}
+h2{
+  font-size: 1.5rem;
+  color: #615151;
+}
+
+.profile{
+  background-color: #f5f6f7;
+  min-height: 450px;
+  text-align: center;
+}
+.profile-p{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+.profile-img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin:20px;
+}
+
+
+
+
+
+
