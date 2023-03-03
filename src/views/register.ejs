@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<!-- HEAD-->
+<%- include("./partials/head") %>
+
+    <body>
+
+
+
+        <main>
+            <form action="/user/register" method="post" class="container login-form" enctype="multipart/form-data"
+                id="register-form">
+                <h4 id="register-title">FORMULARIO DE REGISTRO</h4>
+
+                <label>Nombre:</label>
+                <input class="CampoTexto" type="text" name="nombre" id="register-name" placeholder="Insertar Nombre">
+                <div class="errorLogin" id="register-error-name"></div>
+
+
+                <label>Apellidos:</label>
+                <input class="CampoTexto" type="text" name="apellido" id="register-last-name">
+                <div class="errorLogin" id="register-error-last-name"></div>
+
+                <label>Imagen de perfil:</label>
+                <input class="CampoTexto" type="file" name="imagenPerfil" id="register-file">
+
+                <div class="errorLogin" id="register-error-file"></div>
+
+                <label>Correo:</label>
+                <input class="CampoTexto" type="email" name="email" id="register-mail" placeholder="Insertar Correo">
+                <div class="errorLogin" id="register-error-mail"></div>
+
+                <label>Contraseña:</label>
+                <input class="CampoTexto" type="password" name="contrasena" id="register-password"
+                    placeholder="Insertar Contraseña">
+                <div class="errorLogin" id="register-error-password"></div>
+
+                <label>Confirma contraseña:</label>
+                <input class="CampoTexto" type="password" name="contrasena2" id="register-check-password"
+                    placeholder="Repetir Contraseña" minlength="8">
+                <div class="errorLogin" id="register-error-check-password"></div>
+
+                <p id="register-p1">
+                    <input type="checkbox" name="terminos" value="acepto" required>
+                    <a href="#">Aceptas terminos y condiciones</a>
+                </p>
+
+                <input id="register-button" class="Boton" type="submit" value="BIENVENIDO">
+
+                <p id="register-p2">
+                    <a href="./login">¿Ya tienes cuenta?</a>
+                </p>
+            </form>
+        </main>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,1 @@
+INSERT INTO users (mail,name,last_name,password,picture,is_admin) VALUES ('correofalso@dh.com','Admin','Allstartech','$2b$10$rYjW0D1uzUmaaK.mPNDs4.5kACwZbKhLUEJvg6sYM4sRzledO1inq','userDefault.png',1);
