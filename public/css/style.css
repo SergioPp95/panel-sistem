@@ -3,6 +3,7 @@
   padding: 2rem;
   background-color: #f5f6f7;
   padding: 22px;
+  
 }
 
 .navbar-collapse{
@@ -28,11 +29,11 @@ section{
   justify-content: center;
 }
 
-h1{
+h2{
   font-size: 2.5rem;
 
 }
-h2{
+h3{
   font-size: 1.5rem;
   color: #615151;
 }
@@ -50,14 +51,117 @@ h2{
   padding: 3rem;
 }
 .profile-img{
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   margin:20px;
 }
 
+/* Proyecots */
 
+.expertise{
+  background-color: #1b1b32;
+  color: white;
+  padding: 40px;
+}
+.expertise img{
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.2 ease ;
+}
+.proyects-title{
+  font-size: 2rem;
+}
+.proyects-subtitle{
+  font-size: 1.2rem;
+  color: #584e4e;
+}
 
+.proyect-container{
+  padding-top: 60px;
+  margin-bottom: 40px;
+}
+.overlay{
+  transition: all 0.2s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.overlay p {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.proyecto {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.proyecto:hover img{
+  opacity: 0.2;
+}
+.proyecto:hover .overlay{
+  opacity: 1;
+}
+.overlay .link-container{
+  display: flex;
+}
+.overlay i{
+  color: white;
+  font-size: 60px;
+  margin: 10px;
+}
 
+@media screen and (max-width: 400px) {
+  .overlay p {
+    font-size: 18px;
+  }
+  .overlay i {
+    font-size: 40px;
+  }
+  
+}
+ /*Foooter*/
+ footer{
+  background-color: black;
+  color: white;
+  min-height: 250px;
+ }
+ .footer-icono{
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+  border-radius: 50%;
+ }
+
+ .footer-text{
+  font-size: 1.5rem;
+  padding: 20px;
+  margin-bottom: 30px;
+ }
+ 
+ .iconos-redes a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: all 0.2s ease-in
+ }
+.iconos-redes i {
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in;
+}
 
 
