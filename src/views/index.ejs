@@ -3,37 +3,63 @@
 <!-- HEAD-->
 <%- include("./partials/head") %>
 
-  <body>
-    <%- include("./partials/header") %>
+  <body class="bi">
 
 
-    <main>
-      <form class="container login-form" id="login-form" action="/user/login" method="post">
-        <h5>INICIAR SESION</h5>
-
-        <label for="email">Correo:</label>
-        <input class="CampoTexto" type="email" name="email" id="email" placeholder="Ingresa tu correo">
+    <main >
 
 
+      <div class="container mt-5 rounded shadow">
 
-        <label for="contrasena">Contraseña</label>
-        <input class="CampoTexto" type="password" name="contrasena" id="password" placeholder="Ingresa tu contraseña">
+        <div class="row align-items-stretch">
+          <div class="col bg d-none d-md-block col-md-5 col-lg-5 col-xl-6"></div>
 
-        <p>
-          <input type="checkbox" name="recordar" value="recordar">
-          <label class="login-remember" for="recordar">¿Quieres que te recordemos?</label>
-        </p>
 
-        <input class="Boton" type="submit" value="Ingresar">
+          <div class="col bg-white p-5 rounded-end">
 
-        <p class="Olvido">
-          <a href="#">¿Olvidaste tu contraseña?</a>
-        </p>
+            <div class="text-end">
 
-        <p class="Registro">
-          <a href="register">¿Aun no tienes cuenta?</a>
-        </p>
-      </form>
+              <img src="images/icon.jpg" width="48" alt="logo">
+
+            </div>
+            <h2 class="fw-bold text-center py-5"> Bienvenido </h2>
+
+            <!--  LOGIN  -->
+            <form action="#">
+              <div class="mb-4">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" name="email">
+
+              </div>
+              <div class="mb-4">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" name="password">
+
+              </div>
+              <div class="mb-4 form-check">
+                <input type="checkbox" class="form-check-input" name="connected">
+                <label for="connected" class="form-check-label">Recuerdame</label>
+
+              </div>
+              <div class="d-grid" >
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+              </div>
+              <div class="my-3">
+
+                <span>No tienes cuenta? <a href="#">Registrate</a></span> <br>
+                <span><a href="#"> Recuperar password</a></span>
+
+              </div>
+
+            </form>
+
+          </div>
+
+
+        </div>
+      </div>
+
+
     </main>
 
 

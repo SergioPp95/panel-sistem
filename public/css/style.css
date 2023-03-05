@@ -164,4 +164,15 @@ h3{
   transition: all 0.2s ease-in;
 }
 
+/*LOGIN*/
+
+.bg{
+  background-image: url('../images/back-image.jpg');
+  background-position: center center;
+}
+.bi{
+  background-image: url('../images/bi.jpg');
+  background-size: 50%;
+}
+
 
