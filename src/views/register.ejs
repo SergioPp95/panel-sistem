@@ -4,54 +4,75 @@
 <!-- HEAD-->
 <%- include("./partials/head") %>
 
-    <body>
+    <body class="bi">
 
 
 
         <main>
-            <form action="/user/register" method="post" class="container login-form" enctype="multipart/form-data"
+            <div class="container mt-5 rounded shadow">
+
+                <div class="row align-items-stretch">
+                  <div class="col bg d-none d-md-block col-md-5 col-lg-5 col-xl-6"></div>
+        
+        
+                  <div class="col bg-white p-5 rounded-end">
+        
+                    <div class="text-end">
+        
+                      <img src="images/icon.jpg" width="48" alt="logo">
+        
+                    </div>
+                    <h2 class="fw-bold text-center py-5"> DevGram </h2>
+            <form action="/register" method="post" class="container login-form" enctype="multipart/form-data"
                 id="register-form">
-                <h4 id="register-title">FORMULARIO DE REGISTRO</h4>
+                <div class="mb-4">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="name" class="form-control" name="name" placeholder="Insertar Nombre">
+    
+                  </div>
+                  <div class="mb-4">
+                    <label for="lastName" class="form-label">Apellido</label>
+                    <input type="lastName" class="form-control" name="lastName" placeholder="Insertar Apellido">
+    
+                  </div>
+                  <div class="mb-4">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email">
+    
+                  </div>
+                  <div class="mb-4">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="password">
+    
+                  </div>
+                  <div class="mb-4">
+                    <label for="repassword" class="form-label">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" name="repassword">
+    
+                  </div>
+                  <div class="mb-4">
+                    <label for="userImage" class="form-label">Imagen de perfil</label>
+                    <input type="file" class="form-control" name="userImage">
+    
+                  </div>
+                  <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input" name="isAdmin">
+                    <label for="isAdmin" class="form-check-label">Admin</label>
+    
+                  </div>
+                  <div class="d-grid" >
+                    <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+                  </div>
+                  <div class="my-3">
+    
+                    <span>¿Ya tienes cuenta? <a href="/">Ingresa</a></span> <br>
+                    <span><a href="#"> Recuperar password</a></span>
+    
+                  </div>
 
-                <label>Nombre:</label>
-                <input class="CampoTexto" type="text" name="nombre" id="register-name" placeholder="Insertar Nombre">
-                <div class="errorLogin" id="register-error-name"></div>
-
-
-                <label>Apellidos:</label>
-                <input class="CampoTexto" type="text" name="apellido" id="register-last-name">
-                <div class="errorLogin" id="register-error-last-name"></div>
-
-                <label>Imagen de perfil:</label>
-                <input class="CampoTexto" type="file" name="imagenPerfil" id="register-file">
-
-                <div class="errorLogin" id="register-error-file"></div>
-
-                <label>Correo:</label>
-                <input class="CampoTexto" type="email" name="email" id="register-mail" placeholder="Insertar Correo">
-                <div class="errorLogin" id="register-error-mail"></div>
-
-                <label>Contraseña:</label>
-                <input class="CampoTexto" type="password" name="contrasena" id="register-password"
-                    placeholder="Insertar Contraseña">
-                <div class="errorLogin" id="register-error-password"></div>
-
-                <label>Confirma contraseña:</label>
-                <input class="CampoTexto" type="password" name="contrasena2" id="register-check-password"
-                    placeholder="Repetir Contraseña" minlength="8">
-                <div class="errorLogin" id="register-error-check-password"></div>
-
-                <p id="register-p1">
-                    <input type="checkbox" name="terminos" value="acepto" required>
-                    <a href="#">Aceptas terminos y condiciones</a>
-                </p>
-
-                <input id="register-button" class="Boton" type="submit" value="BIENVENIDO">
-
-                <p id="register-p2">
-                    <a href="./login">¿Ya tienes cuenta?</a>
-                </p>
             </form>
+            </div>
+            </div>
         </main>
 
 
