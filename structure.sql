@@ -18,9 +18,11 @@ create table users (
 create table proyects (
     id smallint not null auto_increment,
     link text unique not null,
-    picture text NOT NULL,
+    img text NOT NULL,
+    user_id smallint(6) default null,
     createdAt timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedAt timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deletedAt timestamp NULL,
-  primary key (id)
+  primary key (id),
+  foreign key (user_id) references users(id)
 );

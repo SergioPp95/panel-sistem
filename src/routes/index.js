@@ -1,17 +1,23 @@
 const express = require('express');
 const mult = require("../middlewares/multer")
 const router = express.Router();
+const userController = require('../controllers/userController')
+const loginCokie = require('../middlewares/loginCokie')
+const loginValidation = require('../middlewares/loginValidation')
+const registerValidations = require('../middlewares/registerValidations')
+const userCheck = require('../middlewares/userCheck')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'Express' });
-});
-router.get('/profile', function(req, res, next) {
-  res.render('profile', { title: 'Express' });
-});
-router.post('/register', mult.single('userImage'))
+router.get('/', userCheck.forGuests, loginCokie, userController.login)
+router.post("/", loginValidation, userController.ingreso)
+
+router.get('/register', userCheck.forGuests, userController.registro);
+router.post("/register", mult.single("userImage"), registerValidations, userController.registrado)
+
+
+router.get("/profile", userCheck.forUsers,  userController.profile)
+
+router.post('/profile', userCheck.forUsers, userController.logout)
+
 
 module.exports = router;

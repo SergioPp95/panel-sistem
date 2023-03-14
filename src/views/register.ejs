@@ -4,6 +4,7 @@
 <!-- HEAD-->
 <%- include("./partials/head") %>
 
+
     <body class="bi">
 
 
@@ -27,27 +28,27 @@
                 id="register-form">
                 <div class="mb-4">
                     <label for="name" class="form-label">Nombre</label>
-                    <input type="name" class="form-control" name="name" placeholder="Insertar Nombre">
+                    <input type="name" class="form-control" name="name" placeholder="Insertar Nombre" value="<%= locals.oldData ? oldData.name : null  %>">
     
                   </div>
                   <div class="mb-4">
                     <label for="lastName" class="form-label">Apellido</label>
-                    <input type="lastName" class="form-control" name="lastName" placeholder="Insertar Apellido">
+                    <input type="lastName" class="form-control" name="lastName" placeholder="Insertar Apellido" value="<%= locals.oldData ? oldData.lastName: null  %>">
     
                   </div>
                   <div class="mb-4">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email">
+                    <input type="email" class="form-control" name="email"  value="<%= locals.oldData ? oldData.email: null  %>">
     
                   </div>
                   <div class="mb-4">
                     <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" class="form-control" name="password"  value="<%= locals.oldData ? oldData.password: null  %>">
     
                   </div>
                   <div class="mb-4">
                     <label for="repassword" class="form-label">Confirmar Contraseña</label>
-                    <input type="password" class="form-control" name="repassword">
+                    <input type="password" class="form-control" name="repassword" >
     
                   </div>
                   <div class="mb-4">
@@ -55,11 +56,13 @@
                     <input type="file" class="form-control" name="userImage">
     
                   </div>
+                  
                   <div class="mb-4 form-check">
-                    <input type="checkbox" class="form-check-input" name="isAdmin">
-                    <label for="isAdmin" class="form-check-label">Admin</label>
+                    <label for="isAdmin" class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name= 'isAdmin' id="userAdmin"> isAdmin</label>
     
                   </div>
+                  
                   <div class="d-grid" >
                     <button type="submit" class="btn btn-primary">Crear Cuenta</button>
                   </div>
