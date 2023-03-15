@@ -73,7 +73,6 @@ let userController = {
 
     logout: (req, res) => {
 
-        // Se elimina al user de session
         req.session.userLogged = null
   
         res.redirect("/")

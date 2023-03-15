@@ -11,7 +11,7 @@ const userCheck = require('../middlewares/userCheck')
 const loginValidation = require('../middlewares/loginValidation')
 const registerValidations = require('../middlewares/registerValidations')
 
-/* GET home page. */
+
 router.get('/', userCheck.forGuests, loginCokie, userController.login)
 
 router.post("/", loginValidation, userController.ingreso)
