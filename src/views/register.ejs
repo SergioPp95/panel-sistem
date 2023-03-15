@@ -4,7 +4,7 @@
 <!-- HEAD-->
 <%- include("./partials/head") %>
 
-
+<script defer src="/js/register.js"></script>
     <body class="bi">
 
 
@@ -29,31 +29,68 @@
                 <div class="mb-4">
                     <label for="name" class="form-label">Nombre</label>
                     <input type="name" class="form-control" name="name" placeholder="Insertar Nombre" value="<%= locals.oldData ? oldData.name : null  %>">
+                    <% if (locals.errors && errors.name) { %>
+                      <div class="errorLoginBack"><label>
+                              <%= errors.name.msg %>
+                          </label></div>
+                      <% } %>
+                          <div class="errorLogin" id="register-error-name"></div>
     
                   </div>
                   <div class="mb-4">
                     <label for="lastName" class="form-label">Apellido</label>
                     <input type="lastName" class="form-control" name="lastName" placeholder="Insertar Apellido" value="<%= locals.oldData ? oldData.lastName: null  %>">
+                    <% if (locals.errors && errors.lastName) { %>
+                      <div class="errorLoginBack"><label>
+                              <%= errors.lastName.msg %>
+                          </label></div>
+                      <% } %>
+                          <div class="errorLogin" id="register-error-last-name"></div>
     
                   </div>
                   <div class="mb-4">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" name="email"  value="<%= locals.oldData ? oldData.email: null  %>">
+                    <% if (locals.errors && errors.email) { %>
+                      <div class="errorLoginBack"><label>
+                              <%= errors.email.msg %>
+                          </label></div>
+                      <% } %>
+                          <div class="errorLogin" id="register-error-mail"></div>
     
                   </div>
                   <div class="mb-4">
                     <label for="password" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" name="password"  value="<%= locals.oldData ? oldData.password: null  %>">
+                    <% if (locals.errors && errors.password) { %>
+                      <div class="errorLoginBack"><label>
+                              <%= errors.password.msg %>
+                          </label></div>
+                      <% } %>
+                          <div class="errorLogin" id="register-error-password"></div>
     
                   </div>
                   <div class="mb-4">
                     <label for="repassword" class="form-label">Confirmar Contraseña</label>
                     <input type="password" class="form-control" name="repassword" >
+                    <% if (locals.errors && errors.repassword) { %>
+                      <div class="errorLoginBack"><label>
+                              <%= errors.repassword.msg %>
+                          </label></div>
+                      <% } %>
+                          <div class="errorLogin"
+                              id="register-error-check-password"></div>
     
                   </div>
                   <div class="mb-4">
                     <label for="userImage" class="form-label">Imagen de perfil</label>
                     <input type="file" class="form-control" name="userImage">
+                    <% if (locals.errors && errors.userImage) { %>
+                      <div class="errorLoginBack"><label>
+                              <%= errors.userImage.msg %>
+                          </label></div>
+                      <% } %>
+                          <div class="errorLogin" id="register-error-file"></div>
     
                   </div>
                   

@@ -1,17 +1,20 @@
 const middleware = {
     forUsers: (req, res, next) => {
        // Pregunta si el usuario está en sesión
-       if(req.session.cookieLog) {
+       console.log(req.session)
+       if(req.session.userLogged) {
           // Si está logeado se sigue con el siguiente middleware o controlador
           next()
        } else {
           // Si no está logeado se redirige a login
+          
           res.redirect("/")
        }
     },
     forGuests: (req, res, next) => {
        // Pregunta si el usuario no está en sesión
-       if(!req.session.cookieLog) {
+       console.log(req.session.userLogged)
+       if(!req.session.userLogged) {
           // Si no está logeado se sigue con el siguiente middleware o controlador
           next()
        } else {

@@ -2,6 +2,7 @@
 <html>
 <!-- HEAD-->
 <%- include("./partials/head") %>
+<script defer src="/js/login.js"></script>
 
   <body class="bi">
 
@@ -25,15 +26,27 @@
             <h2 class="fw-bold text-center py-5"> Bienvenido </h2>
 
             <!--  LOGIN  -->
-            <form action="/profile">
+            <form login-form action="/" method="post">
               <div class="mb-4">
                 <label for="email" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" name="email">
+                <% if (locals.errors && errors.email) { %>
+                  <div class="errorLoginBack"><label>
+                        <%= errors.email.msg %>
+                     </label></div>
+                  <% } %>
+                     <div class="errorLogin" id="login-error-mail">Tienes que ingresar un mail válido</div>
 
               </div>
               <div class="mb-4">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" name="password">
+                <input type="password" class="form-control" name="password" id="password">
+                <% if (locals.errors && errors.contrasena) { %>
+                  <div class="errorLoginBack"><label>
+                        <%= errors.contrasena.msg %>
+                     </label></div>
+                  <% } %>
+                     <div class="errorLogin" id="login-error-password">Tienes que escribir una contraseña</div>
 
               </div>
               <div class="mb-4 form-check">

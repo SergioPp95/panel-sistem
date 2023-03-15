@@ -1,11 +1,13 @@
 const bcrypt = require("bcrypt");
 const { unlinkSync } = require('fs')
 const { validationResult } = require('express-validator');
+const fetch  = require('node-fetch');
 const db = require('../database/models')
-const path = require('path')
+
+
 
 let userController = {
-    login: (req, res) => res.render('./index', { user: req.session.cookieLog }),
+    login: (req, res) => res.render('./index', { user: req.session.userLogged }),
 
     ingreso: async (req, res) => {
         const resultValidation = validationResult(req)
@@ -13,7 +15,7 @@ let userController = {
             res.render('./index', {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
-                user: req.session.cookieLog
+                user: req.session.userLogged
             })
         } else {
 
@@ -24,24 +26,23 @@ let userController = {
                 attributes: { exclude: ['password'] }
             })
 
-            req.session.cookieLog = user.dataValues
+            req.session.userLogged = user.dataValues
 
-            req.body.recordar ? res.cookie("cookieLog", user.dataValues.mail, { maxAge: 1000 * 60 * 60 }) : null // Cookie se guarda por 5 min
+            req.body.recordar ? res.cookie("userLogged", user.dataValues.mail, { maxAge: 1000 * 60 * 60 }) : null // Cookie se guarda por 5 min
 
             res.redirect("/profile")
         }
     },
     registro: (req, res) => {
-        res.render('register', { user: req.session.cookieLog })
+        res.render('register', { user: req.session.userLogged })
     },
     registrado: async (req, res) => {
         const resultValidation = validationResult(req)
         if (resultValidation.errors.length > 0) {
-            unlinkSync(req.file.path)
             res.render('./register', {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
-                user: req.session.cookieLog
+                user: req.session.userLogged
             })
         } else { 
             const encrypted = bcrypt.hashSync(req.body.password, 10)
@@ -67,7 +68,9 @@ let userController = {
             res.redirect("/")
         }
     },
-    profile: (req, res) => res.render('profile', { user: req.session.cookieLog }),
+    profile: (req, res) => res.render('profile', { user: req.session.userLogged }),
+
+
     logout: (req, res) => {
 
         // Se elimina al user de session
@@ -75,6 +78,13 @@ let userController = {
   
         res.redirect("/")
   
+     },
+     list: async(req, res) => {
+        fetch('http://localhost:3000/api/users') 
+            .then(response => response.json())
+            .then(users => {
+                return res.render('apiUser', {users})
+            })
      }
   
 }

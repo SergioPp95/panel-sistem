@@ -175,4 +175,16 @@ h3{
   background-size: 50%;
 }
 
+/*Validaciones*/
+.errorLogin {
+  color: red;
+  text-align: center;
+  font-size: small;
+  display: none;
+}
 
+.errorLoginBack {
+  color: red;
+  text-align: center;
+  font-size: small;
+}
